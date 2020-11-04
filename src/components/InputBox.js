@@ -1,56 +1,69 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import React, { useState, useRef } from "react";
+import { View, Text, TextInput, StyleSheet, Animated } from "react-native";
 
 
 export default function InputBox(props) {
     const { inputkey, inputvalue, verifyValue, updateValue } = props
+    const [inputActive, setInputActive] = useState(false)
 
-    const [tipX, setTipX] = useState(0)
-    const [tipY, setTipY] = useState(17)
-    const [tipOpacity, setTipOpacity] = useState(1)
+    const tipAnim = useRef(new Animated.Value(13)).current
+    const tipMove = () => {
+        Animated.timing(tipAnim, {
+            toValue: 0,
+            duration: 500,
+            useNativeDriver: false
+        }).start(() => {
+            updateValue()
+            setInputActive(true)
+        })
+    }
 
     const handleFocus = () => {
-        setTipX(0)
-        setTipY(0)
-        setTipOpacity(1)
-        updateValue()
+        tipMove()
     }
     console.log(inputkey);
-    
+
     return (
-        <View style={styles.inputbox}>
-            <Text style={[styles.inputtip, {
-                top: tipX,
-                left: tipY,
-                opacity: tipOpacity
-            }]}>{inputkey}</Text>
-            <TextInput style={styles.input} value={inputvalue} onChangeText={verifyValue} onFocus={handleFocus} />
+        <View style={styles.container}>
+            <Animated.View style={[styles.tips, {
+                top: tipAnim,
+            }]}>
+                <Text style={styles.tiptext}>{inputkey}</Text>
+            </Animated.View>
+            <TextInput style={[styles.input, inputActive ? styles.inputactive : {}]} value={inputvalue} onChangeText={verifyValue} onFocus={handleFocus} />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    inputbox: {
+    container: {
+        position: 'relative',
         width: 312,
-        height: 40,
+        height: 39.5,
         marginBottom: 18.5,
+        justifyContent: 'flex-end'
     },
-    inputtip: {
+    tips: {
         position: 'absolute',
-        fontSize: 12,
+        // top: 0,
+    },
+    tiptext: {
         color: '#7B7B7B',
+        fontSize: 12,
         textAlign: 'left',
     },
     input: {
-        width: 312,
-        height: 40,
-        paddingTop: 16.5,
-        paddingBottom: 6.5,
+        flex: 1,
+        paddingVertical: 6.5,
         borderBottomWidth: 1,
         borderBottomColor: '#707070',
         fontSize: 16,
         fontFamily: 'Helvetica',
         color: '#7B7B7B',
     },
+    inputactive: {
+        color: '#E5E5E5',
+        paddingVertical: 5,
+    }
 
 })
