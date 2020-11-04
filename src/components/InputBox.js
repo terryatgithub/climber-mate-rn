@@ -8,10 +8,9 @@ export default function InputBox(props) {
 
     const tipAnim = useRef(new Animated.Value(13)).current
     const tipMove = () => {
-        Animated.timing(tipAnim, {
+        Animated.spring(tipAnim, {
             toValue: 0,
-            duration: 500,
-            useNativeDriver: false
+            duration: 1000,
         }).start(() => {
             updateValue()
             setInputActive(true)
