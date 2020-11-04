@@ -4,19 +4,18 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function LoginButton() {
     const navigation = useNavigation()
-    const [opacity, setOpacity] = useState(0.5)
+    const [img, setImg] = useState(require('../../assets/buttonbg.png'))
     const onPress = () => {
-        setOpacity(1)
+        setImg(require('../../assets/buttonbgactive.png'))
         navigation.navigate('UserName')
     }
     return (
         <View style={[styles.container, ]}>
-            <Pressable style={[styles.button, { opacity: opacity }]} onPress={onPress} >
+            <Pressable style={[styles.button]} onPress={onPress} >
                 <ImageBackground
                     roundAsCircle={true}
                     imageStyle={{ borderRadius: 20 }}
-                    // style={styles.btnbackground} source={require('../../assets/buttonbg.svg')}
-                    style={[styles.image]} source={require('../../assets/avatar.jpeg')}
+                    style={styles.image} source={img}
                 >
                     <Text style={styles.label}>LOGIN</Text>
                 </ImageBackground>
