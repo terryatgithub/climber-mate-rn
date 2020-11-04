@@ -5,24 +5,29 @@ import UserInfo from "../components/UserInfo";
 import UserSteps from "../components/UserSteps";
 
 export default function UserScreen() {
-    // 获取用户信息 展示头像
-
     return (
-        <View style={styles.container}>
+        <View style={styles.absolute}>
             <Image style={[styles.absolute, styles.logo]} source={require('../../assets/ComponentBG/drawable-mdpi/ComponentBG.png')} />
             <BlurView
                 style={styles.absolute}
                 blurType="light"
-                blurAmount={20}
+                blurAmount={30}
             // reducedTransparencyFallbackColor="white"
             />
             <UserInfo style={styles.userinfo} />
-            <UserSteps style={styles.steps} />
+            <View style={[styles.absolute, styles.flex]}>
+                <UserSteps style={styles.steps} />
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    flex: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center', 
+    },
     absolute: {
         position: "absolute",
         top: 0,
@@ -30,24 +35,13 @@ const styles = StyleSheet.create({
         bottom: 0,
         right: 0
     },
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     logo: {
         flex: 1,
         resizeMode: 'cover',
     },
     userinfo: {
-        marginLeft: 26,
-        marginTop: 42,
-        height: 76,
-        alignSelf: 'flex-start'
-    },
-    steps: {
-        width: 300,
-        height: 300,
-        alignSelf: 'center'
+        position: 'absolute',
+        top: 42,
+        left: 26
     },
 })

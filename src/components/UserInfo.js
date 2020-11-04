@@ -13,6 +13,8 @@ export default function UserInfo() {
 
 const styles = StyleSheet.create({
     userinfo: {
+        paddingLeft: 26,
+        paddingTop: 42,
         flexDirection: 'row',
         alignItems: 'center'
     },
