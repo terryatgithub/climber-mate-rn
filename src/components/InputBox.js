@@ -3,24 +3,24 @@ import { View, Text, TextInput, StyleSheet, Animated } from "react-native";
 
 
 export default function InputBox(props) {
-    const { inputkey, inputvalue, verifyValue, updateValue } = props
+    const { inputkey, inputvalue, verifyValue, updateValue, secureTextEntry } = props
     const [inputActive, setInputActive] = useState(false)
 
-    const tipAnim = useRef(new Animated.Value(13)).current
+    const tipAnim = useRef(new Animated.Value(17)).current
     const tipMove = () => {
+        updateValue()
+        setInputActive(true)
         Animated.spring(tipAnim, {
-            toValue: 0,
+            toValue: -5,
             duration: 1000,
+            useNativeDriver: false
         }).start(() => {
-            updateValue()
-            setInputActive(true)
         })
     }
 
     const handleFocus = () => {
         tipMove()
     }
-    console.log(inputkey);
 
     return (
         <View style={styles.container}>
@@ -29,7 +29,7 @@ export default function InputBox(props) {
             }]}>
                 <Text style={styles.tiptext}>{inputkey}</Text>
             </Animated.View>
-            <TextInput style={[styles.input, inputActive ? styles.inputactive : {}]} value={inputvalue} onChangeText={verifyValue} onFocus={handleFocus} />
+            <TextInput secureTextEntry={secureTextEntry} style={[styles.input, inputActive ? styles.inputactive : {}, secureTextEntry ? styles.inputpassword : {}]} value={inputvalue} onChangeText={verifyValue} onFocus={handleFocus} />
         </View>
     )
 }
@@ -59,6 +59,9 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: 'Helvetica',
         color: '#7B7B7B',
+    },
+    inputpassword: {
+        borderBottomColor: '#E5E5E5',
     },
     inputactive: {
         color: '#E5E5E5',

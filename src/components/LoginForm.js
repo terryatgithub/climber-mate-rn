@@ -30,7 +30,7 @@ export default function LoginForm() {
     return (
         <View style={styles.container}>
             <InputBox inputkey="Username" inputvalue={userName} verifyValue={verifyUserName} updateValue={updateUserName} />
-            <InputBox inputkey="Password" inputvalue={password} verifyValue={verifyPassword} updateValue={updatePassword} />
+            <InputBox secureTextEntry={true} inputkey="Password" inputvalue={password} verifyValue={verifyPassword} updateValue={updatePassword} />
             <LoginButton />
         </View>
     )
