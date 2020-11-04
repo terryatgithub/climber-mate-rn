@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, ImageBackground, Pressable, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export default function LoginButton() {
@@ -11,7 +11,7 @@ export default function LoginButton() {
     }
     return (
         <View style={[styles.container, ]}>
-            <TouchableOpacity style={[styles.button, { opacity: opacity }]} onPress={onPress} >
+            <Pressable style={[styles.button, { opacity: opacity }]} onPress={onPress} >
                 <ImageBackground
                     roundAsCircle={true}
                     imageStyle={{ borderRadius: 20 }}
@@ -20,7 +20,7 @@ export default function LoginButton() {
                 >
                     <Text style={styles.label}>LOGIN</Text>
                 </ImageBackground>
-            </TouchableOpacity>
+            </Pressable>
         </View>
 
     )

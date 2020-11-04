@@ -5,30 +5,26 @@ import LoginForm from "../components/LoginForm";
 
 export default function HomeScreen() {
     return (
-        <View style={[styles.absolute, styles.container]}>
-            <Image style={[styles.absolute, styles.backgroundimage]} source={require('../../assets/ComponentBG/drawable-mdpi/ComponentBG.png')} />
-            <LoginForm style={styles.login} />
+        <View style={styles.container}>
+            <ImageBackground style={styles.backgroundimage} source={require('../../assets/ComponentBG/drawable-mdpi/ComponentBG.png')}>
+                <LoginForm style={styles.login} />
+            </ImageBackground>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    absolute: {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0
-    },
     container: {
         flex: 1,
+    },
+    backgroundimage: {
+        flex: 1,
+        resizeMode: 'cover',
         justifyContent: 'flex-end',
         alignItems: 'center',
     },
-    backgroundimage: {
-        resizeMode: 'cover',
-    },
     login: {
+        paddingBottom: 20
 
     }
 })

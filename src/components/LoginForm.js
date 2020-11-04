@@ -28,7 +28,7 @@ export default function LoginForm() {
     }
 
     return (
-        <View>
+        <View style={styles.container}>
             <InputBox inputkey="Username" inputvalue={userName} verifyValue={verifyUserName} updateValue={updateUserName} />
             <InputBox inputkey="Password" inputvalue={password} verifyValue={verifyPassword} updateValue={updatePassword} />
             <LoginButton />
@@ -37,27 +37,7 @@ export default function LoginForm() {
 }
 
 const styles = StyleSheet.create({
-    absolute: {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0
-    },
     container: {
-        flex: 1,
-        flexDirection: 'column',
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // backgroundColor: '#ecf0f1',
-        // padding: 8
-    },
-    logo: {
-        flex: 1,
-        resizeMode: 'cover',
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-        // width: null,
-        // height: null
-    },
+        marginBottom: 75
+    }
 })
