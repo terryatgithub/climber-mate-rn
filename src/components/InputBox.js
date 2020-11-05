@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { View, Text, TextInput, StyleSheet, Animated } from "react-native";
+import { View, Text, TextInput, StyleSheet, Animated, Easing } from "react-native";
 
 
 export default function InputBox(props) {
@@ -12,7 +12,8 @@ export default function InputBox(props) {
         setInputActive(true)
         Animated.spring(tipAnim, {
             toValue: -5,
-            duration: 1000,
+            duration: 1200,
+            easing: Easing.ease,
             useNativeDriver: false
         }).start(() => {
         })
