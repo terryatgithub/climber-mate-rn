@@ -7,7 +7,7 @@ Only UI and animation effects are implemented, the corresponding input verificat
 ## Demo Preview 
 1. iOS Emulator(left), Android Emulator(right)  
  
-![gif](https://media.giphy.com/media/CYLGTDtH9wJKD6Sy7P/giphy.gif)![gif](https://media.giphy.com/media/CYLGTDtH9wJKD6Sy7P/giphy.gif)
+![gif](http://beta.webapp.skysrt.com/rn/Climber%20Demo%20Android%20Emulator.gif)![gif](http://beta.webapp.skysrt.com/rn/Climber%20Demo%20iOS%20Emulator.gif)
 
 
 ## Demo install package and video record  
@@ -31,7 +31,7 @@ yarn ios  # for ios
 yarn android # for android
 ```
 
-## external librari
+## external libraries used
 `@react-native-community/blur` for Background image Gaussian blur  
 `react-native-circular-progress` for circular progress bar
 
