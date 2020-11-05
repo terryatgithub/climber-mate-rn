@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, ImageBackground, Button, TextInput, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import InputBox from "./InputBox";
 import LoginButton from "./LoginButton";
 

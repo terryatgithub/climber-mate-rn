@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import { View, Image, Text, ImageBackground, Button, TextInput, StyleSheet } from "react-native";
+import React from "react";
+import { View, ImageBackground, StyleSheet } from "react-native";
 import LoginForm from "../components/LoginForm";
-
 
 export default function HomeScreen() {
     return (
+        // <SafeAreaView style={styles.container}>
         <View style={styles.container}>
             <ImageBackground style={styles.backgroundimage} source={require('../../assets/ComponentBG/drawable-mdpi/ComponentBG.png')}>
                 <LoginForm style={styles.login} />
             </ImageBackground>
         </View>
+        // </SafeAreaView>
     )
 }
 

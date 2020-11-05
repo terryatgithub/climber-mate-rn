@@ -3,7 +3,6 @@ import { View, Text, StyleSheet } from "react-native";
 import ProgressBar from "./ProgressBar";
 
 export default function UserSteps() {
-    // 获取用户信息 展示头像
     const [stepNum, setStepNum] = useState(12000)
     useEffect(() => {
         setTimeout(() => {

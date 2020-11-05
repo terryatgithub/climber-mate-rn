@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { View, Text, TextInput, StyleSheet, Animated, Easing } from "react-native";
 
-
 export default function InputBox(props) {
     const { inputkey, inputvalue, verifyValue, updateValue, secureTextEntry } = props
     const [inputActive, setInputActive] = useState(false)
@@ -30,7 +29,16 @@ export default function InputBox(props) {
             }]}>
                 <Text style={styles.tiptext}>{inputkey}</Text>
             </Animated.View>
-            <TextInput secureTextEntry={secureTextEntry} style={[styles.input, inputActive ? styles.inputactive : {}, secureTextEntry ? styles.inputpassword : {}]} value={inputvalue} onChangeText={verifyValue} onFocus={handleFocus} />
+            <TextInput
+                secureTextEntry={secureTextEntry}
+                style={[
+                    styles.input,
+                    inputActive ? styles.inputactive : {},
+                    secureTextEntry ? styles.inputpassword : {}
+                ]}
+                value={inputvalue}
+                onChangeText={verifyValue}
+                onFocus={handleFocus} />
         </View>
     )
 }
