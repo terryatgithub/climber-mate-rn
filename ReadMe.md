@@ -5,7 +5,7 @@
 Only UI and animation effects are implemented, the corresponding input verification and server api logic is not implemented.
 
 ## Demo Preview 
-1. iOS Emulator(left), Android Emulator(right)  
+1. Android Emulator(left), iOS Emulator(right)  
  
 ![gif](http://beta.webapp.skysrt.com/rn/Climber%20Demo%20Android%20Emulator.gif)![gif](http://beta.webapp.skysrt.com/rn/Climber%20Demo%20iOS%20Emulator.gif)
 
