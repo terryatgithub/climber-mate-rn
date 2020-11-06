@@ -1,5 +1,5 @@
 ## Climber Mate
-> An demo app for mountain climbers, developed by React Native.  
+> A demo app for mountain climbers, developed with React Native framework.  
 
 > Note:  
 Only UI and animation effects are implemented, the corresponding input verification and server api logic is not implemented.
@@ -10,7 +10,7 @@ Only UI and animation effects are implemented, the corresponding input verificat
 ![gif](http://beta.webapp.skysrt.com/rn/Climber%20Demo%20Android%20Emulator.gif)![gif](http://beta.webapp.skysrt.com/rn/Climber%20Demo%20iOS%20Emulator.gif)
 
 
-## Demo install package and video record  
+## Installation package and demo video recording   
  1. Installation package:  
      1) for Android:  
         https://pan.baidu.com/s/1dS4dXoOgKsz3hkGBO14q6A   
@@ -19,7 +19,7 @@ Only UI and animation effects are implemented, the corresponding input verificat
         None.   
         Because the iOS real machine test needs to bind the developer account and provide the specific info of the target phone to install. 
   
- 2. Demo Video record   
+ 2. Demo Video recording   
    + Android Emulator video 
       https://www.bilibili.com/video/BV1Ya4y1s74J/   
    + iOS Emulator video 
